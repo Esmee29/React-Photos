@@ -3,8 +3,7 @@ import MainLayout from "./mainLayout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import AnaloguePage from "./pages/AnaloguePage";
-import DigitalPage from "./pages/DigitalPage";
+import PhotographyPage from "./pages/PhotographyPage";
 
 
 const App = () => {
@@ -13,8 +12,7 @@ const App = () => {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/analogue" element={<AnaloguePage />} />
-        <Route path="/digital" element={<DigitalPage />} />
+        <Route path="/photos" element={<PhotographyPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
