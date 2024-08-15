@@ -12,10 +12,8 @@ const Navbar = () => {
     const path = location.pathname;
     if (path === '/') {
       setActiveItem('home');
-    } else if (path === '/analogue') {
-      setActiveItem('analogue');
-    } else if (path === '/digital') {
-      setActiveItem('digital');
+    } else if (path === '/gallery') {
+      setActiveItem('gallery');
     } else if (path === '/about') {
       setActiveItem('about');
     }
@@ -71,10 +69,10 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/photos"
-                className={`block py-2 px-3 ${activeItem === 'analogue' ? 'text-blue-300' : 'text-gray-200 hover:text-blue-300'} rounded md:p-0`}
+                to="/gallery"
+                className={`block py-2 px-3 ${activeItem === 'gallery' ? 'text-blue-300' : 'text-gray-200 hover:text-blue-300'} rounded md:p-0`}
                 aria-current="page"
-                onClick={() => handleItemClick('analogue')}
+                onClick={() => handleItemClick('gallery')}
               >
                 Photography
               </Link>
