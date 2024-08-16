@@ -1,0 +1,25 @@
+/* Gallery.css */
+.gallery-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .gallery-container .react-photo-album {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Use gap instead of margin for spacing */
+  }
+  
+  .gallery-container .react-photo-album img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure images cover their containers */
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-container .react-photo-album {
+      gap: 5px; /* Smaller gap for mobile screens */
+    }
+  }
+  

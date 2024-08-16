@@ -1,12 +1,19 @@
-import { MasonryPhotoAlbum } from "react-photo-album";
-import "react-photo-album/styles.css";
+import { useState, useEffect } from 'react';
+import { MasonryPhotoAlbum } from 'react-photo-album';
+import 'react-photo-album/styles.css';
+import './Gallery.css';
 
-// Dynamically import all images in the Analogue folder that match the pattern
+// Dynamically import all images
 const images = import.meta.glob('/src/assets/Photos/*.{jpg,jpeg,png}', { eager: true });
 
 const Photos = Object.keys(images).map(filePath => {
   const img = new Image();
   img.src = images[filePath].default;
+  
+  // Ensure dimensions are set
+  img.onload = () => {
+    // Handle loaded images if needed
+  };
 
   return {
     src: images[filePath].default,
@@ -28,12 +35,31 @@ function shuffleArray(array) {
 const shuffledPhotos = shuffleArray(Photos);
 
 export default function Gallery() {
+  const [columns, setColumns] = useState(getColumns());
+
+  function getColumns() {
+    if (window.innerWidth < 768) {
+      return 2; // Fewer columns for mobile screens
+    }
+    return 3; // Default number of columns
+  }
+
+  useEffect(() => {
+    function handleResize() {
+      setColumns(getColumns());
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div className="p-4 max-w-screen-xl mx-auto">
+    <div className="gallery-container p-4 max-w-screen-xl mx-auto">
       <MasonryPhotoAlbum
-        photos={shuffledPhotos}  // Use the shuffled array
-        columns={3} // Number of columns in the layout
-        spacing={10} // Spacing between images
+        photos={shuffledPhotos}
+        columns={columns} // Use dynamic columns based on screen size
+        spacing={10}
       />
     </div>
   );

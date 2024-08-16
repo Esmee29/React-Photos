@@ -18,7 +18,7 @@ const featuredImages = [
 const HomePage = () => {
   return (
     <div className="home-page">
-    <h1 className="text-center text-4xl font-bold mb-8">Welcome to My Photography Portfolio</h1>
+    <h1 className="text-center text-4xl font-bold mb-8 mt-10">Welcome to My Photography Portfolio</h1>
     <Link to="/gallery" className="gallery-link">View Gallery</Link>
     <Carousel 
       showArrows={true}
