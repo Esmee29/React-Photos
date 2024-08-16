@@ -8,10 +8,10 @@ const AboutPage = () => {
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Featured Work</h2>
         <div className="grid grid-cols-2 gap-4">
-          <img src="/src/assets/Photos/000061820036.jpg" alt="Sunset" className="w-full h-auto rounded-lg shadow-lg" />
-          <img src="/src/assets/Photos/000061820028.jpg" alt="Mountain" className="w-full h-auto rounded-lg shadow-lg" />
-          <img src="/src/assets/Photos/000063640021.jpg" alt="Cromer Pier" className="w-full h-auto rounded-lg shadow-lg" />
-          <img src="/src/assets/Photos/000016390034.jpg" alt="Windmil" className="w-full h-auto rounded-lg shadow-lg" />
+          <img src="/assets/Photos/000061820036.jpg" alt="Sunset" className="w-full h-auto rounded-lg shadow-lg" />
+          <img src="/assets/Photos/000061820028.jpg" alt="Mountain" className="w-full h-auto rounded-lg shadow-lg" />
+          <img src="/assets/Photos/000063640021.jpg" alt="Cromer Pier" className="w-full h-auto rounded-lg shadow-lg" />
+          <img src="/assets/Photos/000016390034.jpg" alt="Windmil" className="w-full h-auto rounded-lg shadow-lg" />
         </div>
       </div>
       <div className="mt-8">
